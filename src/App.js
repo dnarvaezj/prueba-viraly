@@ -53,8 +53,7 @@ function App() {
         <Form.Group className="filter-input">
           <Form.Label>Resultados</Form.Label>
           <Form.Select onChange={(e) => setLimit(e.target.value)} defaultValue="5">
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option value="3">3</option>
             <option value="5">5</option>
           </Form.Select>
         </Form.Group>

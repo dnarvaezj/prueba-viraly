@@ -6,11 +6,11 @@ export const HttpRequest = (page, limit, status, token) => {
 
   const [{ data, loading, error }] = useAxios({
     method: 'GET',
-    url: `https://api-staging.viraly.ai/users/devices_requests`,
+    url: `${process.env.REACT_APP_BASE_URL}devices_requests`,
     headers: { 'Authorization': `Bearer ${token}` },
     params: {
       'page': page,
-      'userId': 'ZsZrySuNxkGxxE8GsltsT',
+      'userId': process.env.REACT_APP_USERID,
       'limit': limit,
       'requestStatus': status
     }
@@ -23,11 +23,11 @@ export const PostHttpRequest = () => {
 
     const [{ data, loading, error }] = useAxios({
       method: 'POST',
-      url: `https://api-staging.viraly.ai/users/login`,
+      url: `${process.env.REACT_APP_BASE_URL}login`,
       data: {
-        "email": "gerencia@viraly.ai",
-        "password": "CtAEaJbvt8TZ2wcS",
-        "deviceId": "14dm1n"
+        "email": process.env.REACT_APP_EMAIL,
+        "password": process.env.REACT_APP_PASSWORD,
+        "deviceId": process.env.REACT_APP_DEVICEID
       }
     });
 
